@@ -22,7 +22,10 @@ export default function App() {
         .pop()
     );
 
-    iconMap = [...iconMap, fileName.split(".")[0]];
+    iconMap = [
+      ...iconMap,
+      { name: fileName.split(".")[0], paths, viewBox, width, height }
+    ];
 
     const node = document.getElementById("result");
     node.innerHTML = JSON.stringify(iconMap);
